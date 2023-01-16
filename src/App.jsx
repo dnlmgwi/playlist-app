@@ -1,34 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import React from "react";
+import {
+  Container,
+  Col,
+  Row,
+  CardText,
+  CardTitle,
+  Button,
+  Input,
+} from "reactstrap";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container fluid="lg">
+        <Row>
+          <Col className="bg-light border">
+            <img src="/vite.svg" className="logo" alt="Vite logo" />
+          </Col>
+          <Col className="bg-light border">
+            <CardTitle tag="h5" className="text-start">
+              Playlist
+            </CardTitle>
+            <CardText className="text-start" tag="h1">
+              Playlist Name
+            </CardText>
+            <CardText className="text-start">Playlist Description</CardText>
+            <CardText className="text-start">
+              Created By: Owner 0 Songs
+            </CardText>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="bg-light border" xs="6">
+            <Button color="primary" size="sm">
+              Play
+            </Button>
+          </Col>
+          <Col className="bg-light border" xs="6">
+            <Input bsSize="sm" type="search" />
+          </Col>
+        </Row>
+        <Row>
+          <Col className="bg-light border">Table</Col>
+        </Row>
+      </Container>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -114,20 +114,19 @@ function App() {
             </Button>
           </Col>
         </Row>
-        <div className=".content">
-          <Row>
-            <Col>
-              <Input
-                bsSize="sm"
-                type="search"
-                value={songName}
-                onChange={filter}
-                className="input"
-                placeholder="Search Song Title"
-              />
-            </Col>
-          </Row>
-        </div>
+
+        <Row>
+          <Col>
+            <Input
+              bsSize="sm"
+              type="search"
+              value={songName}
+              onChange={filter}
+              className="input"
+              placeholder="Search Song Title"
+            />
+          </Col>
+        </Row>
         <Row>
           <Col>
             <Table borderless hover responsive size="">
@@ -156,16 +155,19 @@ function App() {
             </Table>
           </Col>
         </Row>
-
-        <AudioPlayer
-          className=".container"
-          volume="0.5"
-          src={playlist[currentTrack].url}
-          showSkipControls
-          showJumpControls={false}
-          onClickNext={handleClickNext}
-          onEnded={handleEnd}
-        />
+        <Row>
+          <Col>
+            <AudioPlayer
+              className=".container"
+              volume="0.5"
+              src={playlist[currentTrack].url}
+              showSkipControls
+              showJumpControls={false}
+              onClickNext={handleClickNext}
+              onEnded={handleEnd}
+            />
+          </Col>
+        </Row>
       </Container>
     </div>
   );
